@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Accueil - David Ekchajzer</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div id="pageBody">
+        <div id="lefNav">
+            <nav>
+                <ul>
+                    <li class="navElement"><a href="index.html" class="navElementLink">Accueil</a></li>
+                    <li class="navElement"><a href="Projets/Projets.html" class="navElementLink">Projets</a></li>
+                    <li class="navElement"><a href="Recherche/Recherche.html" class="navElementLink">Recherche</a></li>
+                    <li class="navElement"><a href="CV/CV.html" class="navElementLink">CV</a></li>
+                    <li class="navElement"><a href="Jeux/Jeux.html" class="navElementLink">Jeux</a></li>
+                    <li class="navElement"><a href="mailto:da.ekchajzer@gmail.com" class="navElementLink">Mail</a></li>
+                </ul>
+            </nav>
+
+            <div id="logosFooter">
+                <a href="https://www.linkedin.com/in/david-ekchajzer/"><img alt="Logo Linkedin" class="logoFooterLinkedin" src="logoLinkedin.png"></a>
+                <a href="https://github.com/da-ekchajzer"><img alt="Logo Github" class="logoFooterGit" src="logoGithub.png"></a>
+            </div>
+        </div>
+
+        <div id="rightContent">
+            <div id="headerContent">
+                <div id="pageTitle">
+                    <h1>David Ekchajzer</h1>
+                </div>
+
+            </div>
+
+            <div id="bodyContent">
+                <p id="presentationParagraph">Je suis étudiant en master 1 de Méthode Informatique Appliqué à la Gestion des Entreprises (MIAGE) à La Sorbonne. Après un apprentissage dans la BI, je m’intéresse aujourd’hui particulièrement aux impacts écologiques et sociaux positifs et négatifs du numérique. Je travail à la mesure des impacts tant dans mon apprentissage à OM conseil que dans mon mémoire de recherche.
+                    Ce site présentes mes différents projets </p>
+
+                <div id="previews">
+
+                    <a class="articlePreview" href="https://stream-for-good.miage.dev/" target="_blank">
+                        <div class="previewHeader">
+                            <div class="previewTitle">
+                                <h2>Stream4Good : Deploiment et sécurisation d'APIs</h2>
+                            </div>
+                            <div class="previewDate">
+                                <h2>2020 <br> 2021</h2>
+                            </div>
+
+                        </div>
+                        <p class="previewBody">
+                            Stream4Good est un projet de recherche de Paris 1 visant à mieux comprendre l'impact des platformes vidéos (youtube et netflix) sur la nature des contenus proposé. Dans le cadre du cours de veille technologique et du projet commun de M1 notre groupe effectue un benchmark de plusieurs solutions pour le deploiement et la sécuritation des APIs utilisé par stream4good.
+                        </p>
+                    </a>
+
+                    <a class="articlePreview" href="Articles/article.html">
+                        <div class="previewHeader">
+                            <div class="previewTitle">
+                                <h2>Eco-conception de mon site</h2>
+                            </div>
+                            <div class="previewDate">
+                                <h2>Décembre 2020</h2>
+                            </div>
+
+                        </div>
+                        <p class="previewBody">
+                            Le design et le developpement de ce site à été l'occasion de faire un état de l'art des règles d'éco-conception des sites vitrines et de les appliquer. Cette article propose de détaillier ma démarche.
+                        </p>
+                    </a>
+
+                    <a class="articlePreview" href="Articles/article.html">
+                        <div class="previewHeader">
+                            <div class="previewTitle">
+                                <h2>Mode accésibilité de ce site</h2>
+                            </div>
+                            <div class="previewDate">
+                                <h2>Décembre 2020</h2>
+                            </div>
+
+                        </div>
+                        <p class="previewBody">
+                            Le design et le developpement de ce site à été l'occasion de faire un état de l'art des règles d'accéssibilité des sites vitrines et de les appliquer. Cette article propose de détaillier ma démarche.
+                        </p>
+                    </a>
+
+                    <a class="articlePreview" href="Articles/OceanBox%20-%20Rendu%20Projet%20Commun%20-%202019.2020v2.pdf" target="_blank">
+                        <div class="previewHeader">
+                            <div class="previewTitle">
+                                <h2>Boitier vidéo OceanStream</h2>
+                            </div>
+                            <div class="previewDate">
+                                <h2>2019<br>2020</h2>
+                            </div>
+
+                        </div>
+                        <p class="previewBody">
+                            Dans le cadre du projet commun de L3 notre groupe à developpé un POC de boitier vidéo (Raspberry PI) diffusant des images de fonds marrin téléchargé de manière journalière. Le projet à été mené en mode AGILE avec l'association OceanStream comme sponsor. Le deploiement
+                        </p>
+                    </a>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="logosConception">
+            <div class="tooltip">
+                <span class="tooltiptext">Cette page emet environ Xg CO2-eq.</span>
+                <a class="logoEcoConception" href="Articles/article.html"><img tabindex="3" class="logoConceptionimg" alt="Accesibility implementation" src="leaf.png"></a>
+
+            </div>
+        </div>
+
+        <button id="AccesibilityButton" tabindex="1" type="button" onclick="buttonAccessibility();">Mode accesibilité</button>
+    </div>
+</body>
+
+<script>
+    function loadStyleSheet(CSShref) {
+        var head = document.head;
+        var link = document.createElement("link");
+
+        link.type = "text/css";
+        link.rel = "stylesheet";
+        link.href = CSShref;
+
+        head.appendChild(link);
+    }
+
+    function loadNormalStyleSheet() {
+        loadStyleSheet("CSS/stylesheet.css")
+    }
+
+
+    function loadAccesibilityStyleSheet() {
+        loadStyleSheet("CSS/accessibilityStyleSheet.css")
+    }
+
+    function buttonAccessibility() {
+        var elementBody = document.getElementsByTagName("body")[0]
+        elementBody.setAttribute("hidden", true);
+
+        if (document.querySelectorAll('link[rel=stylesheet]')[0].getAttribute("href").endsWith("accessibilityStyleSheet.css")) {
+            removeStyleSheet();
+            loadNormalStyleSheet();
+            localStorage.setItem("mode", "normal");
+
+        } else {
+            removeStyleSheet();
+            loadAccesibilityStyleSheet();
+            localStorage.setItem("mode", "accesibility");
+        }
+
+        elementBody.removeAttribute("hidden");
+    }
+
+    function removeStyleSheet() {
+        var elements = document.querySelectorAll('link[rel=stylesheet]');
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+
+
+    if (localStorage.getItem("mode") == "accesibility") {
+        loadAccesibilityStyleSheet();
+    } else {
+        loadNormalStyleSheet();
+    }
+</script></html>
