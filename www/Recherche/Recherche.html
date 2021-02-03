@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Page Academique - David Ekchajzer</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div id="pageBody">
+        <div id="lefNav">
+            <nav>
+                <ul>
+                    <li class="navElement"><a href="../index.html" class="navElementLink">Accueil</a></li>
+                    <li class="navElement"><a href="../Projets/Projets.html" class="navElementLink">Projets</a></li>
+                    <li class="navElement"><a href="../Recherche/Recherche.html" class="navElementLink">Recherche</a></li>
+                    <li class="navElement"><a href="../CV/CV.html" class="navElementLink">CV</a></li>
+                    <li class="navElement"><a href="../Jeux/Jeux.html" class="navElementLink">Jeux</a></li>
+                    <li class="navElement"><a href="mailto:da.ekchajzer@gmail.com" class="navElementLink">Mail</a></li>
+                </ul>
+            </nav>
+
+            <div id="logosFooter">
+                <a href="https://www.linkedin.com/in/david-ekchajzer/"><img alt="Logo Linkedin" class="logoFooterLinkedin" src="../logoLinkedin.png"></a>
+                <a href="https://github.com/da-ekchajzer"><img alt="Logo Github" class="logoFooterGit" src="../logoGithub.png"></a>
+            </div>
+        </div>
+
+        <div id="rightContent">
+            <div id="headerContent">
+                <div id="pageTitle">
+                    <h1>Recherche</h1>
+                </div>
+
+            </div>
+
+            <div id="bodyContent">
+                <p id="presentationParagraph">Mes recherches et projets de recherche</p>
+
+                <div id="previews">
+                    <div class="projectPreview">
+                        <div class="previewHeader">
+                            <div class="previewTitle">
+                                <h2>Mémoire de M1</h2>
+                            </div>
+                            <div class="previewDate">
+                                <h2>2020 - 2020</h2>
+                            </div>
+
+                        </div>
+                        <p class="previewBody">
+                            la mise en place de TIC pour réduire l’impact environnemental de processus ne peut pas être évaluée par la simple économie d’impact permise par les technologies mises en œuvre
+                            Des méthodologies plus complexes doivent être appliquées pour connaître l’impact net de l’utilisation des TIC dans un contexte spécifique.
+                            <br>
+                            <br>
+                            Problématique : Quelle(s) méthode(s) pour calculer l’impact environnemental net de l’utilisation des technologies de l’information et de la communication (TIC) pour l’optimisation d’un processus ?
+                        </p>
+                    </div>
+                    <a class="projectPreview" href="../Recherche/Preprofessionnalisation-Le_metier_de_Bio-informaticien.pdf" target='_blank'>
+                        <div class="previewHeader">
+                            <div class="previewTitle">
+                                <h2>Mémoire de L2 : Le métier de bio-informaticien</h2>
+                            </div>
+                            <div class="previewDate">
+                                <h2>2018</h2>
+                            </div>
+
+                        </div>
+                        <p class="previewBody">
+                            Le 14 avril 2003, le premier séquençage complet de l’ADN s’achève. Il aura fallu 10 ans et 2,7 milliards de dollars pour y parvenir . Aujourd’hui, en 2018, vous pouvez séquencer en quelques heures votre ADN pour une cinquantaine d’euros grâce à des plateformes comme myHeritage . Cette avancée exponentielle n’est pas sans rappeler celle des ordinateurs, caractérisée par la loi de Moore qui peut être vulgarisée par : « tous les 18 mois, la puissance de calcul des processeurs est doublée à prix constant ». Cette analogie est pertinente, car c’est en partie grâce à l’avènement de l’informatique et à la croissance de la puissance de calcul que les biologistes ont pu accomplir cette prouesse. L’éclosion d’un nouveau domaine des biotechnologies a été à l’origine de la réunion de l’informatique et de la biologie : la bio-informatique. Cette science est à mi-chemin entre la biologie et l’informatique, plus précisément entre les biotechnologies et le big data . Le métier de bio-informaticien qui en découle consiste en la gestion (traitement, simulation, synthétisation) de données biologiques à travers l’informatique.
+                        </p>
+                    </a>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div id="logosConception">
+            <div class="tooltip">
+                <span class="tooltiptext">Cette page emet environ Xg CO2-eq.</span>
+                <a tabindex="3" class="logoEcoConception" href="../Articles/CaculetteImpactPage.html"><img class="logoConceptionimg" alt="Accesibility implementation" src="../leaf.png"></a>
+
+            </div>
+        </div>
+
+        <button id="AccesibilityButton" tabindex="1" type="button" onclick="buttonAccessibility();">Mode accesibilité</button>
+
+    </div>
+</body>
+
+<script>
+    function loadStyleSheet(CSShref) {
+        var head = document.head;
+        var link = document.createElement("link");
+
+        link.type = "text/css";
+        link.rel = "stylesheet";
+        link.href = CSShref;
+
+        head.appendChild(link);
+    }
+
+    function loadNormalStyleSheet() {
+        loadStyleSheet("../CSS/stylesheet.css")
+    }
+
+
+    function loadAccesibilityStyleSheet() {
+        loadStyleSheet("../CSS/accessibilityStyleSheet.css")
+    }
+
+    function buttonAccessibility() {
+        var elementBody = document.getElementsByTagName("body")[0]
+        elementBody.setAttribute("hidden", true);
+
+        if (document.querySelectorAll('link[rel=stylesheet]')[0].getAttribute("href").endsWith("accessibilityStyleSheet.css")) {
+            removeStyleSheet();
+            loadNormalStyleSheet();
+            localStorage.setItem("mode", "normal");
+
+        } else {
+            removeStyleSheet();
+            loadAccesibilityStyleSheet();
+            localStorage.setItem("mode", "accesibility");
+        }
+
+        elementBody.removeAttribute("hidden");
+    }
+
+    function removeStyleSheet() {
+        var elements = document.querySelectorAll('link[rel=stylesheet]');
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+
+
+    if (localStorage.getItem("mode") == "accesibility") {
+        loadAccesibilityStyleSheet();
+    } else {
+        loadNormalStyleSheet();
+    }
+</script></html>
